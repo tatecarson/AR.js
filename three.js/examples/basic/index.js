@@ -151,5 +151,13 @@ requestAnimationFrame(function animate(nowMsec) {
     onRenderFct(deltaMsec / 1000, nowMsec / 1000);
   });
 
-  if (camera.visible) console.log("is this doing it??");
+  if (camera.visible) {
+    console.log("is this doing it??");
+    synth.triggerAttackRelease("C4", "8n");
+  }
 });
+
+//wait for page to load
+if (document.readyState == "complete") {
+  var synth = new Tone.Synth().toMaster();
+}
