@@ -132,6 +132,7 @@ onRenderFcts.push(function(delta) {
 
 // render the scene
 onRenderFcts.push(function() {
+  console.log("should stuff go here?");
   renderer.render(scene, camera);
 });
 
