@@ -137,10 +137,7 @@ onRenderFcts.push(function() {
   renderer.render(scene, camera);
 });
 var synth = new Tone.Synth().toMaster();
-//wait for page to load
-// $(function() {
-//   synth = new Tone.Synth().toMaster();
-// });
+
 // run the rendering loop
 var lastTimeMsec = null;
 requestAnimationFrame(function animate(nowMsec) {
