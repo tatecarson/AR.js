@@ -168,4 +168,4 @@ requestAnimationFrame(function animate(nowMsec) {
     distortion.wet.value = 0;
   }
 });
-StartAudioContext(Tone.context, "#start");
+// StartAudioContext(Tone.context, "#start");
