@@ -85,8 +85,9 @@ onRenderFcts.push(function() {
 
   // update scene.visible if the marker is seen
   scene.visible = camera.visible;
+  console.log("is this doing it??");
 });
-if (camera.visible) console.log("marker is on");
+// if (camera.visible) console.log("marker is on");
 ////////////////////////////////////////////////////////////////////////////////
 //          Create a ArMarkerControls
 ////////////////////////////////////////////////////////////////////////////////
