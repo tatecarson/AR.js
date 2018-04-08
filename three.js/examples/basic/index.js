@@ -136,7 +136,16 @@ onRenderFcts.push(function(delta) {
 onRenderFcts.push(function() {
   renderer.render(scene, camera);
 });
-var synth = new Tone.Synth().toMaster();
+
+var distortion = new Tone.Distortion(0.4).toMaster();
+
+var synth = new Tone.Synth().connect(distortion);
+
+var loop = new Tone.Loop(function(time) {
+  synth.triggerAttackRelease("C2", "8n", time);
+}, "4n");
+loop.start();
+Tone.Transport.start();
 
 // run the rendering loop
 var lastTimeMsec = null;
@@ -154,6 +163,8 @@ requestAnimationFrame(function animate(nowMsec) {
 
   if (camera.visible) {
     console.log("is this doing it??");
-    synth.triggerAttackRelease("C4", "8n");
+    distortion.value = 1;
+  } else {
+    distortion.value = 0;
   }
 });
