@@ -136,7 +136,11 @@ onRenderFcts.push(function(delta) {
 onRenderFcts.push(function() {
   renderer.render(scene, camera);
 });
-
+var synth = new Tone.Synth().toMaster();
+//wait for page to load
+// $(function() {
+//   synth = new Tone.Synth().toMaster();
+// });
 // run the rendering loop
 var lastTimeMsec = null;
 requestAnimationFrame(function animate(nowMsec) {
@@ -156,8 +160,3 @@ requestAnimationFrame(function animate(nowMsec) {
     synth.triggerAttackRelease("C4", "8n");
   }
 });
-
-//wait for page to load
-if (document.readyState == "complete") {
-  var synth = new Tone.Synth().toMaster();
-}
