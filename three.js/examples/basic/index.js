@@ -87,7 +87,7 @@ onRenderFcts.push(function() {
   scene.visible = camera.visible;
   //   if (camera.visible) console.log("is this doing it??");
 });
-if (camera.visible) console.log("is this doing it??");
+// if (camera.visible) console.log("is this doing it??");
 ////////////////////////////////////////////////////////////////////////////////
 //          Create a ArMarkerControls
 ////////////////////////////////////////////////////////////////////////////////
@@ -150,4 +150,6 @@ requestAnimationFrame(function animate(nowMsec) {
   onRenderFcts.forEach(function(onRenderFct) {
     onRenderFct(deltaMsec / 1000, nowMsec / 1000);
   });
+
+  if (camera.visible) console.log("is this doing it??");
 });
