@@ -53,6 +53,7 @@ arToolkitSource.init(function onReady() {
 window.addEventListener("resize", function() {
   onResize();
 });
+
 function onResize() {
   arToolkitSource.onResize();
   arToolkitSource.copySizeTo(renderer.domElement);
@@ -85,7 +86,7 @@ onRenderFcts.push(function() {
   // update scene.visible if the marker is seen
   scene.visible = camera.visible;
 });
-
+if (camera.visible) console.log("marker is on");
 ////////////////////////////////////////////////////////////////////////////////
 //          Create a ArMarkerControls
 ////////////////////////////////////////////////////////////////////////////////
@@ -132,7 +133,6 @@ onRenderFcts.push(function(delta) {
 
 // render the scene
 onRenderFcts.push(function() {
-  console.log("should stuff go here?");
   renderer.render(scene, camera);
 });
 
