@@ -164,8 +164,9 @@ requestAnimationFrame(function animate(nowMsec) {
   if (camera.visible) {
     console.log("is this doing it??");
     distortion.wet.value = 1;
+    distortion.distortion = 1;
   } else {
     distortion.wet.value = 0;
   }
 });
-// StartAudioContext(Tone.context, "#start");
+StartAudioContext(Tone.context, "#start");
