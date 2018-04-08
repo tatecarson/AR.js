@@ -137,7 +137,8 @@ onRenderFcts.push(function() {
   renderer.render(scene, camera);
 });
 
-var distortion = new Tone.Distortion(0.4).toMaster();
+var pitchShift = new Tone.PitchShift().toMaster();
+var distortion = new Tone.Distortion(0.4).connect(pitchShift);
 
 var synth = new Tone.Synth().connect(distortion);
 
@@ -165,8 +166,10 @@ requestAnimationFrame(function animate(nowMsec) {
     console.log("is this doing it??");
     distortion.wet.value = 1;
     distortion.distortion = 1;
+    pitchShift.pitch = 5;
   } else {
     distortion.wet.value = 0;
+    pitchShift.pitch = 12;
   }
 });
 StartAudioContext(Tone.context, "#start");
